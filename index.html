@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="TINKLO — Shop everyday essentials, gadgets, fashion and more.">
+  <title>TINKLO — Everything you love, in one place</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">Welcome to TINKLO · Everyday shopping, made simple</div>
+  <header class="header">
+    <a class="brand" href="#" aria-label="TINKLO home"><span class="brand-mark">T</span><span>TINKLO</span></a>
+    <form class="search" id="searchForm" role="search">
+      <input id="searchInput" type="search" placeholder="Search products..." aria-label="Search products">
+      <button aria-label="Search">⌕</button>
+    </form>
+    <button class="cart-button" id="openCart" aria-label="Open shopping cart">🛒 <span>Cart</span> <b id="cartCount">0</b></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">WELCOME TO TINKLO</span>
+        <h1>Everything you love.<br><em>All in one place.</em></h1>
+        <p>Discover useful finds for your everyday life — from gadgets and fashion to home essentials.</p>
+        <a class="primary-link" href="#shop">Explore products <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="bag">T</div><div class="spark s1">✦</div><div class="spark s2">✧</div>
+        <div class="hero-note">GOOD FINDS<br><strong>START HERE</strong></div>
+      </div>
+    </section>
+
+    <section class="trust-row" aria-label="Store benefits">
+      <div>✦ <span><strong>Curated finds</strong><small>For everyday life</small></span></div>
+      <div>♡ <span><strong>Easy ordering</strong><small>Simple shopping experience</small></span></div>
+      <div>➜ <span><strong>WhatsApp support</strong><small>Talk to our team</small></span></div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-heading">
+        <div><span class="eyebrow">THE TINKLO COLLECTION</span><h2>Shop our products</h2></div>
+        <p>Find something you’ll love.</p>
+      </div>
+      <nav class="filters" id="filters" aria-label="Product categories">
+        <button class="filter active" data-category="All">All products</button>
+        <button class="filter" data-category="Electronics">Electronics</button>
+        <button class="filter" data-category="Fashion">Fashion</button>
+        <button class="filter" data-category="Home">Home</button>
+        <button class="filter" data-category="Lifestyle">Lifestyle</button>
+      </nav>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No products found. Try another search.</p>
+    </section>
+
+    <section class="help-banner">
+      <div><span class="eyebrow">NEED A HAND?</span><h2>We’re just a message away.</h2><p>Questions about a product or your order? Contact TINKLO on WhatsApp.</p></div>
+      <a class="light-link" href="https://wa.me/916364608691" target="_blank" rel="noopener">Chat with us ↗</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#"><span class="brand-mark">T</span><span>TINKLO</span></a>
+    <p>Everything you love, in one place.</p>
+    <div><a href="mailto:tinklogadgets@gmail.com">tinklogadgets@gmail.com</a><span> · </span><a href="https://wa.me/916364608691" target="_blank" rel="noopener">WhatsApp support</a></div>
+    <small>© <span id="year"></span> TINKLO. All rights reserved.</small>
+  </footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-head"><div><span class="eyebrow">YOUR BAG</span><h2>Shopping cart</h2></div><button id="closeCart" class="close-button" aria-label="Close cart">×</button></div>
+    <div id="cartItems" class="cart-items"><p class="cart-empty">Your cart is waiting for something lovely.</p></div>
+    <div class="cart-bottom"><div class="total-line"><span>Subtotal</span><strong id="cartTotal">₹0</strong></div><p class="checkout-note">Delivery charges, if any, will be confirmed on WhatsApp.</p><button id="checkout" class="checkout-button">Order on WhatsApp ↗</button></div>
+  </aside>
+  <script src="app.js"></script>
+</body>
+</html>
