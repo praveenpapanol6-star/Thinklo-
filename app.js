@@ -12,7 +12,7 @@ const products = [
 ];
 const cart = {};
 const money = n => "₹" + n.toLocaleString("en-IN");
-const productRoot = document.querySelector("#products");
+const productRoot = document.querySelector("#productGrid");
 products.forEach(p=>{
  const card=document.createElement("article");card.className="product";
  card.innerHTML=`<div class="visual" aria-hidden="true">${p.emoji}</div><h3>${p.name}</h3><p>${p.desc}</p><div class="price">${money(p.price)}</div><button class="add">Add to cart</button>`;
@@ -22,12 +22,12 @@ products.forEach(p=>{
 function renderCart(){
  const lines=products.filter(p=>cart[p.id]).map(p=>`${p.name} × ${cart[p.id]} — ${money(p.price*cart[p.id])}`);
  const total=products.reduce((s,p)=>s+p.price*(cart[p.id]||0),0);
- document.querySelector("#carttext").textContent=lines.length?lines.join(" | ")+` | Total: ${money(total)}`:"Your cart is empty.";
+ document.querySelector("#cartItems").textContent=lines.length?lines.join(" | ")+` | Total: ${money(total)}`:"Your cart is empty.";
  const qty=Object.values(cart).reduce((a,b)=>a+b,0);
- document.querySelector("#count").textContent=`${qty} item${qty===1?"":"s"}`;
- document.querySelector("#order").disabled=!qty;
+ document.querySelector("#cartCount").textContent=`${qty} item${qty===1?"":"s"}`;
+ document.querySelector("#checkout").disabled=!qty;
 }
-document.querySelector("#order").addEventListener("click",()=>{
+document.querySelector("#cartTotal").addEventListener("click",()=>{
  if(WHATSAPP_NUMBER.includes("X")){alert("Please set your verified WhatsApp number in app.js before ordering.");return;}
  const lines=products.filter(p=>cart[p.id]).map(p=>`${p.name} x ${cart[p.id]} = ${money(p.price*cart[p.id])}`);
  const total=products.reduce((s,p)=>s+p.price*(cart[p.id]||0),0);
