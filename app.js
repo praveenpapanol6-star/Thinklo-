@@ -27,7 +27,7 @@ function renderCart(){
  document.querySelector("#cartCount").textContent=`${qty} item${qty===1?"":"s"}`;
  document.querySelector("#checkout").disabled=!qty;
 }
-document.querySelector("#cartTotal").addEventListener("click",()=>{
+document.querySelector("#checkout").addEventListener("click",()=>{.addEventListener("click",()=>{
  if(WHATSAPP_NUMBER.includes("X")){alert("Please set your verified WhatsApp number in app.js before ordering.");return;}
  const lines=products.filter(p=>cart[p.id]).map(p=>`${p.name} x ${cart[p.id]} = ${money(p.price*cart[p.id])}`);
  const total=products.reduce((s,p)=>s+p.price*(cart[p.id]||0),0);
